@@ -905,8 +905,14 @@ def show_garden_overview():
         # Download option
         st.markdown("### 📥 Download Your Predictions")
         
-        # Create downloadable data
+        # Create downloadable data with modified column names
         download_data = pd.DataFrame(predictions)
+        # Remove confidence column and rename probability columns
+        download_data = download_data.drop('confidence', axis=1, errors='ignore')
+        download_data = download_data.rename(columns={
+            'probability_up': 'P_Up',
+            'probability_down': 'P_Down'
+        })
         csv = download_data.to_csv(index=False)
         
         st.download_button(
