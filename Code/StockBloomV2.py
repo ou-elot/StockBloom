@@ -776,7 +776,7 @@ def show_garden_overview():
                     <strong>💡 CSV Tips:</strong><br>
                     • Include symbols in any column<br>
                     • One symbol per row<br>
-                    • Headers are optional<br>
+                    • Headers are needed<br>
                     • Max 6 characters per symbol
                 </p>
             </div>
